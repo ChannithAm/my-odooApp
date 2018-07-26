@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <menuitem id="main_menu_taxi"
+              name="Taxi Management"/>
+    <menuitem id="menu_taxi"
+              name="Information Management"
+              parent="main_menu_taxi"/>
+    <menuitem id="customer_menu"
+              name="Customer"
+              parent="menu_taxi"
+              action="taxi_customer_action"/>
+    <!--Driver-->
+    <menuitem id="driver_menu"
+              name="Driver"
+              parent="menu_taxi"
+              action="taxi_driver_action"/>
+    <!--Car-->
+    <menuitem id="car_menu"
+              name="Car"
+              parent="menu_taxi"
+              action="taxi_car_action"/>
+    <!--Booking-->
+    <menuitem id="coordination_menu"
+              name="Coordination Management"
+              parent="main_menu_taxi"/>
+    <menuitem id="booking_menu"
+              name="Booking"
+              parent="coordination_menu"
+              action="taxi_booking_action"/>
+    <menuitem id="coordination_coord_menu"
+              name="Coordination"
+              parent="coordination_menu"
+              action="taxi_coordination_action"/>
+</odoo>

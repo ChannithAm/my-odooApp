@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--View-->
+    <record id="taxi_coordination_view_form" model="ir.ui.view">
+        <field name="name">taxi_coordination_view_form</field>
+        <field name="model">taxi.coordination</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code" readonly="True"/>
+                        <field name="car_model"/>
+                        <field name="driver"/>
+                        <field name="start_time"/>
+                        <field name="total_of_car_seats"/>
+                        <field name="pick_up"/>
+                        <field name="drop_off"/>
+                        <field name="sequence" invisible="True"/>
+                        <field name="month" invisible="True"/>
+                        <field name="year" invisible="True"/>
+                    </group>
+                    <notebook>
+                        <page string="Booking">
+                            <!--<field name="booking_id"/>-->
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree-->
+    <record id="taxi_coordination_view_tree" model="ir.ui.view">
+        <field name="name">taxi_coordination_view_tree</field>
+        <field name="model">taxi.coordination</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="car_model"/>
+                <field name="driver"/>
+            </tree>
+        </field>
+    </record>
+    <!--Action window-->
+    <record id="taxi_coordination_action" model="ir.actions.act_window">
+        <field name="name">Coordination</field>
+        <field name="res_model">taxi.coordination</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="taxi_coordination_view_tree" />
+        <field name="context">
+            {'form_view_ref' : 'taxi_coordination_view_form'}
+        </field>
+    </record>
+</odoo>

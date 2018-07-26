@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Windows Actions-->
+    <!--<record model="ir.actions.act_window" id="teacher_list_action">-->
+        <!--<field name="name">Contacts</field>-->
+        <!--<field name="res_model">res.teacher</field>-->
+        <!--<field name="view_model">tree,form</field>-->
+    <!--</record>-->
+</odoo>

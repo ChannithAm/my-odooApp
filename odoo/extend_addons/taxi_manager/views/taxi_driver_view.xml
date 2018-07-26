@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--View-->
+    <record id="taxi_driver_view_form" model="ir.ui.view">
+        <field name="name">taxi_driver_view_form</field>
+        <field name="model">taxi.driver</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="id_num"/>
+                        <field name="mobile_phone"/>
+                        <field name="perm_addr"/>
+                        <field name="temp_addr"/>
+                    </group>
+                    <notebook string="Driver Notebook">
+                        <page string="Driver Hitory">
+                            <field name="name"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree-->
+    <record id="taxi_driver_view_tree" model="ir.ui.view">
+        <field name="name">taxi_driver_view_tree</field>
+        <field name="model">taxi.driver</field>
+        <field name="arch" type="xml">
+            <tree string="Driver Tree">
+                <field name="name"/>
+                <field name="mobile_phone"/>
+                <field name="id_num"/>
+                <field name="perm_addr"/>
+                <field name="temp_addr"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action Window-->
+    <record id="taxi_driver_action" model="ir.actions.act_window">
+        <field name="name">Driver</field>
+        <field name="res_model">taxi.driver</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

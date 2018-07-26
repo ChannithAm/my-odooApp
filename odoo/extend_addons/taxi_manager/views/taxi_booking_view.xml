@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--View-->
+    <record id="taxi_booking_view_form" model="ir.ui.view">
+        <field name="name">taxi_booking_view_form</field>
+        <field name="model">taxi.booking</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_id"/>
+                        <field name="picking_up"/>
+                        <field name="drop_off"/>
+                        <field name="taken_seats"/>
+                        <field name="booking_time"/>
+                        <field name="pick_up_time"/>
+                        <field name="other_requirements"/>
+                        <field name="sequence" invisible="True"/>
+                        <field name="month" invisible="True"/>
+                        <field name="year" invisible="True"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree-->
+    <record id="taxi_booking_view_tree" model="ir.ui.view">
+        <field name="name">taxi_booking_view_tree</field>
+        <field name="model">taxi.booking</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sequence" invisible="True"/>
+                <field name="customer_id"/>
+                <field name="taken_seats"/>
+                <field name="booking_time"/>
+                <field name="pick_up_time"/>
+                <field name="picking_up"/>
+                <field name="drop_off"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="taxi_booking_action" model="ir.actions.act_window">
+        <field name="name">Booking</field>
+        <field name="res_model">taxi.booking</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="taxi_booking_view_tree" />
+        <field name="context">
+            {'form_view_ref' : 'taxi_booking_view_form'}
+        </field>
+    </record>
+</odoo>

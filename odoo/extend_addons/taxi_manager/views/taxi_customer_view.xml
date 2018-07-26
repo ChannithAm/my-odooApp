@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--View-->
+    <record id="taxi_customer_view_form" model="ir.ui.view">
+        <field name="name">taxi_customer_view_form</field>
+        <field name="model">taxi.customer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="mobile_phone"/>
+                        <field name="last_pick_up"/>
+                        <field name="last_drop_off"/>
+                    </group>
+                    <notebook>
+                        <page string="Customer History">
+                            <field name="name"/>
+                            <!--<field name="name_combine"/>-->
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree-->
+    <record id="taxi_customer_view_tree" model="ir.ui.view">
+        <field name="name">taxi_customer_view_tree</field>
+        <field name="model">taxi.customer</field>
+        <field name="arch" type="xml">
+            <tree string="Customer Tree">
+                <field name="name"/>
+                <field name="mobile_phone"/>
+                <field name="last_pick_up"/>
+                <field name="last_drop_off"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action windows-->
+    <record id="taxi_customer_action" model="ir.actions.act_window">
+        <field name="name">Customer</field>
+        <field name="res_model">taxi.customer</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+</odoo>

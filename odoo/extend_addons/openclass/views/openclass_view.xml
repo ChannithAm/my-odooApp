@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- View -->
+    <record model="ir.ui.view" id="course_view_form">
+        <field name="name">course_view</field>
+        <field name="model">openclass.course</field>
+        <field name="arch" type="xml">
+            <form string="Course Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="responsible_id"/>
+                        <field name="name_test"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Session">
+                            <field name="session_ids">
+                                <tree string="Registed section">
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="About">
+                            <p>This is an example of NOTEBOOK</p>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <!-- Tree -->
+    <record model="ir.ui.view" id="course_view_tree">
+        <field name="name">course_view_tree</field>
+        <field name="model">openclass.course</field>
+        <field name="arch" type="xml">
+            <tree string="Course Tree">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="session_ids"/>
+                <field name="date_test"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search  (both title and description)-->
+    <record model="ir.ui.view" id="course_view_search">
+        <field name="name">course_view_search</field>
+        <field name="model">openclass.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <!--window action-->
+    <record model="ir.actions.act_window" id="course_list_action">
+            <field name="name">Khóa Học 00</field>
+            <field name="res_model">openclass.course</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Hãy tạo khóa học mới đi!!!!!!!!!!!
+                </p>
+            </field>
+
+    </record>
+
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--view-->
+    <record id="taxi_car_view_form" model="ir.ui.view">
+        <field name="name">taxi_car_view_form</field>
+        <field name="model">taxi.car</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="license_plates"/>
+                        <field name="seat"/>
+                        <field name="driver"/>
+                    </group>
+                    <notebook>
+                        <page string="Car History">
+                            <field name="name"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree-->
+    <record id="taxi_car_view_tree" model="ir.ui.view">
+        <field name="name">taxi_car_view_tree</field>
+        <field name="model">taxi.car</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="license_plates"/>
+                <field name="seat"/>
+                <field name="driver"/>
+            </tree>
+        </field>
+    </record>
+    <!--ACtion window-->
+    <record id="taxi_car_action" model="ir.actions.act_window">
+        <field name="name">Car</field>
+        <field name="res_model">taxi.car</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

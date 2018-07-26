@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="main_openclass_menu"
+          name="Open Class Module"/>
+
+    <menuitem id="openclass_menu"
+          name="Open Class"
+          parent="main_openclass_menu"/>
+
+    <menuitem id="courses_menu"
+          name="Danh Sách Khóa Học"
+          parent="openclass_menu"
+          action="course_list_action"/>
+
+    <!-- Teacher -->
+    <menuitem id="teacher_menu"
+              name="Teachers List"
+              parent="main_openclass_menu"/>
+    <menuitem id="teacher_name_menu"
+              name="Name"
+              parent="teacher_menu"
+              action="course_list_action"/>
+
+    <!-- Session -->
+    <menuitem id="session_menu"
+              name="Session list"
+              parent="main_openclass_menu"
+              action="session_list_action"/>
+</odoo>
